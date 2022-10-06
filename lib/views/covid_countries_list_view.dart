@@ -46,7 +46,7 @@ class _CountriesListViewState extends State<CountriesListView> {
                 builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
                   if (!snapshot.hasData) {
                     return ListView.builder(
-                        itemCount: 4,
+                        itemCount: 50,
                         itemBuilder: (context, index) {
                           return Shimmer.fromColors(
                             baseColor: Colors.grey.shade700,
@@ -65,8 +65,9 @@ class _CountriesListViewState extends State<CountriesListView> {
                                     color: Colors.white,
                                   ),
                                   leading: Container(
+                                    padding: EdgeInsets.only(top: 5),
                                     height: 10,
-                                    width: 80,
+                                    width: 50,
                                     color: Colors.white,
                                   ),
                                 ),
