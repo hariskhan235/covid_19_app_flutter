@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:covid_19_api/views/world_states_view.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -16,6 +19,21 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    Timer(
+      const Duration(seconds: 3),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => WorldStatesView(),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -49,7 +67,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
             const Align(
               alignment: Alignment.center,
               child: Text(
-                'Covid-19\n App',
+                'Covid-19 App',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
