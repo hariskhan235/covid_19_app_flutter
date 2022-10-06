@@ -24,7 +24,7 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => WorldStatesView(),
+          builder: (context) => const WorldStatesView(),
         ),
       ),
     );
